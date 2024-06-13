@@ -3,15 +3,16 @@ pipeline {
    * TODO: Implement pipeline stages/steps
    *   See documentation: https://www.jenkins.io/doc/book/pipeline/syntax/#stages
    */
+   agent any
    stages {
-      stage("build") {
+      stage('build') {
           steps {
-            ./gradlew assemble
+            sh './gradlew assemble'
           }
       }
-      stage("test") {
+      stage('test') {
           steps {
-            ./gradlew test
+            sh './gradlew test'
           }
       }
    }
